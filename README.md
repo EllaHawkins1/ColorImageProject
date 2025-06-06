@@ -1,9 +1,3 @@
-
-Welcome to our Image Colorization Project!
-This project is designed to provide a seamless experience for using a trained AI model to colorize grayscale images. The back-end, written in Python, handles the AI processing, while the front-end, running locally via Visual Studio Code, provides an intuitive interface for users. Follow this guide to set up and run the application.
-
-Getting Started
-
 Step 1: Back-End Setup
 Create a Virtual Environment
 Before installing dependencies, set up a virtual environment :
