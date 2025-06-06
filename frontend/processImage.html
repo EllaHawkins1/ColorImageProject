@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIA ORA</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abel&family=Abril+Fatface&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <div class="processImage">
+      <div class="processImage-body">
+        <div class="processImage-content">
+          <div class="myContainer">
+            <div class="title-container">LOG</div>
+
+            <div class="image-processing">
+              <!-- Process Item for Image Upload -->
+              <div class="process-item">
+                <div class="action-title">Black and white image</div>
+                <div class="image-upload">
+                  <input
+                    type="file"
+                    id="imageUpload"
+                    accept="image/*"
+                    style="display: none"
+                    onchange="previewImage(event)"
+                  />
+                  <button
+                    class="upload-button"
+                    onclick="document.getElementById('imageUpload').click()"
+                  >
+                    <span class="plus-icon"
+                      ><i class="fa-solid fa-plus"></i
+                    ></span>
+                  </button>
+                  <img id="previewProcessImage" src="" alt="Image Preview" />
+                </div>
+              </div>
+
+              <!-- Process Item for Processed Image -->
+              <div class="process-item">
+                <div class="action-title">Processed And recolored image</div>
+                <div class="image-process">
+                  <canvas id="processedCanvas"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="process-details">
+              <div class="table-container">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Prediction</th>
+                      <th>Accuracy</th>
+                      <th>RGB</th>
+                      <!-- <th>Threat</th>
+                                        <th>Date</th>
+                                        <th>Time</th> -->
+                    </tr>
+                  </thead>
+                  <tbody id="resultTableBody"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="{{ url_for('static', filename='js/imageProcessing.js') }}"></script> -->
+    <script>
+      function previewImage(event) {
+        const file = event.target.files[0];
+        const previewImageElement = document.getElementById(
+          "previewProcessImage"
+        );
+
+        if (file) {
+          const reader = new FileReader();
+
+          reader.onload = function (e) {
+            previewImageElement.src = e.target.result; // Set the source of the image to the file
+            previewImageElement.style.display = "block"; // Show the image element
+          };
+
+          reader.readAsDataURL(file); // Read the image file as a Data URL
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Processing</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+</head>
+<body>
+  <div class="processImage">
+    <div class="processImage-body">
+      <div class="processImage-content">
+        <div class="myContainer">
+          <div class="title-container">LOG</div>
+
+          <div class="image-processing">
+            <div class="process-item">
+              <div class="action-title">Black and White Image</div>
+              <div class="image-upload">
+                <input type="file" id="imageUpload" accept="image/*" style="display: none" onchange="uploadImage(event)">
+                <button class="upload-button" onclick="document.getElementById('imageUpload').click()">
+                  <span class="plus-icon"><i class="fa-solid fa-plus"></i></span>
+                </button>
+                <img id="previewProcessImage" src="" alt="Image Preview" />
+              </div>
+            </div>
+
+            <div class="process-item">
+              <div class="action-title">Processed Image</div>
+              <div class="image-process">
+                <canvas id="processedCanvas"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div class="process-details">
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Prediction</th>
+                    <th>Accuracy</th>
+                    <th>RGB</th>
+                  </tr>
+                </thead>
+                <tbody id="resultTableBody"> 
+                  <tr>
+                    <td id="prediction"></td>
+                    <td id="accuracy"></td>
+                    <td id="rgb"></td>
+                  </tr> 
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./js/processImage.js"></script>
+</body>
+</html>
