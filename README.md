@@ -1,6 +1,4 @@
 ![image](https://github.com/user-attachments/assets/67818992-6b1d-484b-8f98-293162b2eabd)
-
-
 Step 1: Back-End Setup
 Create a Virtual Environment
 Before installing dependencies, set up a virtual environment :
